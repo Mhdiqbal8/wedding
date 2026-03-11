@@ -1,0 +1,245 @@
+:root {
+  --primary-font: "Playfair Display", serif;
+  --secondary-font: "Montserrat", sans-serif;
+  --accent-color: #c5b39b; /* Warna tombol Get In Touch */
+  --text-dark: #333;
+}
+
+body {
+  font-family: var(--secondary-font);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+.navbar {
+  padding: 1.5rem 0;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+/* .navbar-brand img {
+    height: 40px;
+} */
+.nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff !important;
+  font-weight: 400;
+}
+
+/* Styling Menu Utama Mobile */
+.custom-mobile-nav {
+  padding: 0 2rem;
+}
+
+.nav-link-mobile {
+  display: block;
+  padding: 15px 0;
+  font-size: 1.5rem; /* Ukuran teks lebih besar untuk mobile */
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0; /* Garis pembatas halus */
+}
+
+/* Merapikan Dropdown di dalam Offcanvas */
+.mobile-dropdown-inner {
+  position: static !important; /* Menghilangkan efek melayang */
+  float: none !important;
+  width: 100% !important;
+  background-color: transparent !important; /* Menghilangkan background putih */
+  border: none !important; /* Menghilangkan border */
+  box-shadow: none !important; /* Menghilangkan bayangan */
+  padding-left: 1.5rem !important; /* Memberi indentasi ke kanan */
+  margin: 0 !important;
+  transform: none !important; /* Reset posisi transform bootstrap */
+}
+
+.mobile-dropdown-inner .dropdown-item {
+  padding: 10px 0;
+  font-size: 1.2rem;
+  color: #666;
+  background: none !important;
+}
+
+.mobile-dropdown-inner .dropdown-item:active {
+  color: #000;
+}
+
+/* Animasi Icon Panah saat diklik */
+.dropdown.show .small-icon {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
+.small-icon {
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070")
+    no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+.slider-nav {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+/* --- Intro Section --- */
+.intro-section {
+  padding: 100px 0;
+  text-align: center;
+}
+.intro-title {
+  font-family: var(--primary-font);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+.intro-text {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 2;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- Portfolio Grid --- */
+.portfolio-grid .col {
+  padding: 10px;
+}
+.card-portfolio {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+.card-portfolio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.card-portfolio:hover img {
+  transform: scale(1.05);
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.card-overlay-bottom-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  color: #fff;
+  text-align: center;
+  padding-left: 50px;
+  padding-top: 30%;
+}
+.card-landscape {
+  aspect-ratio: 16 / 9 !important; /* Mengubah rasio dari portrait ke landscape */
+  height: auto !important; /* Biarkan tinggi menyesuaikan rasio */
+}
+.card-category {
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+  margin-bottom: 5px;
+}
+.card-names {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- Mid CTA Section --- */
+.cta-section {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.cta-box {
+  max-width: 500px;
+  padding-left: 10%;
+}
+.cta-title {
+  font-family: var(--primary-font);
+  font-size: 2rem;
+}
+.cta-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 20px 0;
+}
+.btn-custom {
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 0;
+  padding: 10px 30px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  margin-top: 20px;
+}
+
+/* --- Footer --- */
+.footer-top {
+  padding: 80px 0;
+  text-align: center;
+}
+.footer-main {
+  padding: 50px 0;
+  border-top: 1px solid #eee;
+}
+.footer-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.social-icons a {
+  color: #333;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+.copyright {
+  font-size: 0.7rem;
+  color: #999;
+}

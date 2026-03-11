@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Hubungi Kami</h2>
+
+    <form id="contact-form">
+      <input type="text" name="nama" placeholder="Nama Anda" required />
+      <input type="email" name="email" placeholder="Email Anda" required />
+      <input type="text" name="location" placeholder="location" required />
+      <select name="know" id="">
+        <option value="Instagram">Instagram</option>
+        <option value="Facebook">Facebook</option>
+      </select>
+      <!-- <input type="text" name="know" placeholder="know" required /> -->
+      <button type="submit" id="submit-btn">Kirim Data</button>
+    </form>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbx15NeDrMQQfTmsfsuqCLepVs5Ujgt77A8pMuA5x7dO6u5PfDd4p9-3UzfYelxGGOa5ZA/exec";
+      const form = document.getElementById("contact-form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const btn = document.getElementById("submit-btn");
+        const linkPriceList = `https://drive.google.com/drive/folders/16KrjDdUgqHmAy2gS35sQ0Asmwvhw0gC5?usp=sharing`;
+        btn.disabled = true;
+        btn.innerHTML = "Mengirim...";
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // Data sudah terkirim ke server, kita tidak perlu menunggu
+            // konfirmasi "Sukses" dari Google untuk mereset form
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+
+        // PINDAHKAN INI KE LUAR .then() agar form langsung reset & user merasa cepat
+        // alert("Data sedang diproses di latar belakang!");
+
+        // Buka WhatsApp di tab baru
+        window.open(linkPriceList, "_blank");
+
+        // 5. Reset Form agar user bisa input lagi jika kembali ke web
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = "Kirim Data";
+          form.reset();
+        }, 1000);
+
+        // btn.disabled = false;
+        // btn.innerHTML = "Kirim Data";
+        // form.reset();
+      });
+
+      //   form.addEventListener("submit", (e) => {
+      //     e.preventDefault();
+      //     const btn = document.getElementById("submit-btn");
+
+      //     // 1. Ambil data dari input form
+      //     const nama = form.nama.value;
+      //     const email = form.email.value;
+      //     const location = form.location.value;
+      //     const know = form.know.value;
+      //     const noWA = "6283159604216";
+
+      //     // 2. Efek visual tombol
+      //     btn.disabled = true;
+      //     btn.innerHTML = "Sedang Mengirim...";
+
+      //     // 3. Kirim data ke Google Sheets (Berjalan di background)
+      //     fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      //       .then((response) => console.log("success"))
+      //       //   .then((response) => console.log("Data sukses masuk Spreadsheet"))
+      //       .catch((error) => console.error("Error!", error.message));
+
+      //     // 4. LOGIKA WHATSAPP (Langsung eksekusi tanpa menunggu fetch selesai)
+      //     const teksWA = `Halo Admin, saya *${nama}* (${email}).%0A%0APesan: _${`Saya ingin minta price list`}_`;
+      //     const urlWA = `https://wa.me/${noWA}?text=${teksWA}`;
+
+      //     // Buka WhatsApp di tab baru
+      //     window.open(urlWA, "_blank");
+
+      //     // 5. Reset Form agar user bisa input lagi jika kembali ke web
+      //     setTimeout(() => {
+      //       btn.disabled = false;
+      //       btn.innerHTML = "Kirim Data";
+      //       form.reset();
+      //     }, 1000);
+      //   });
+    </script>
+  </body>
+</html>

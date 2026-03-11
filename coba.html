@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagenic - Timeless Memories</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Styling Menu Utama Mobile */
+      .custom-mobile-nav {
+        padding: 0 2rem;
+      }
+
+      .nav-link-mobile {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.5rem; /* Ukuran teks lebih besar untuk mobile */
+        font-weight: 500;
+        color: #333;
+        text-decoration: none;
+        border-bottom: 1px solid #f0f0f0; /* Garis pembatas halus */
+      }
+
+      /* Merapikan Dropdown di dalam Offcanvas */
+      .mobile-dropdown-inner {
+        position: static !important; /* Menghilangkan efek melayang */
+        float: none !important;
+        width: 100% !important;
+        background-color: transparent !important; /* Menghilangkan background putih */
+        border: none !important; /* Menghilangkan border */
+        box-shadow: none !important; /* Menghilangkan bayangan */
+        padding-left: 1.5rem !important; /* Memberi indentasi ke kanan */
+        margin: 0 !important;
+        transform: none !important; /* Reset posisi transform bootstrap */
+      }
+
+      .mobile-dropdown-inner .dropdown-item {
+        padding: 10px 0;
+        font-size: 1.2rem;
+        color: #666;
+        background: none !important;
+      }
+
+      .mobile-dropdown-inner .dropdown-item:active {
+        color: #000;
+      }
+
+      /* Animasi Icon Panah saat diklik */
+      .dropdown.show .small-icon {
+        transform: rotate(180deg);
+        transition: 0.3s;
+      }
+
+      .small-icon {
+        transition: 0.3s;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <div class="row w-100 align-items-center m-0">
+          <div
+            class="col-6 col-md-4 d-none d-lg-flex justify-content-start p-0"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item px-3">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle px-3"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Portfolio
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="wedding.html">Wedding</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="before-wedding.html"
+                      >Before Wedding</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="couple-session.html"
+                      >Couple Session</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="analog-series.html"
+                      >Analog Series</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="col-6 col-md-4 d-flex justify-content-between justify-content-lg-center p-0"
+          >
+            <a class="navbar-brand m-0" href="#">
+              <img
+                src="https://www.imagenic.co/images/logo.png"
+                alt="Logo"
+                style="height: 35px"
+                onerror="this.src='https://placehold.co/100x40/white/black?text=IMAGENIC'"
+              />
+            </a>
+          </div>
+
+          <div
+            class="col-6 col-md-4 d-flex justify-content-end align-items-center p-0"
+          >
+            <div class="d-none d-lg-flex">
+              <ul class="navbar-nav">
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="#">Other Works</a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="blog.html">Family</a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="contact-us.html">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+
+            <button
+              class="navbar-toggler border-0 d-lg-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <i class="bi bi-list fs-1 text-dark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="offcanvas offcanvas-end w-100 border-0"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header justify-content-end p-4">
+        <button
+          type="button"
+          class="btn-close text-reset fs-4"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body p-0">
+        <ul class="navbar-nav custom-mobile-nav">
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link-mobile d-flex justify-content-between align-items-center"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Portfolio <i class="bi bi-chevron-down small-icon"></i>
+            </a>
+            <ul class="dropdown-menu mobile-dropdown-inner">
+              <li><a class="dropdown-item" href="wedding.html">Wedding</a></li>
+              <li>
+                <a class="dropdown-item" href="before-wedding.html"
+                  >Before Wedding</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="couple-session.html"
+                  >Couple Session</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="analog-series.html"
+                  >Analog Series</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Other Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Family</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-end w-100 border-0"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header justify-content-end p-4">
+        <button
+          type="button"
+          class="btn-close text-reset fs-4"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body p-5">
+        <ul class="navbar-nav custom-mobile-nav">
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link-mobile d-flex justify-content-between align-items-center"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              Portfolio <i class="bi bi-chevron-down fs-5"></i>
+            </a>
+            <ul class="dropdown-menu border-0 ps-4">
+              <li><a class="dropdown-item" href="#">Wedding</a></li>
+              <li><a class="dropdown-item" href="#">Couple Session</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Other Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Family</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="slider-nav">
+        <div class="mb-4">01</div>
+        <div class="mb-4"><i class="bi bi-arrow-right"></i></div>
+        <div>03</div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container">
+        <h1 class="intro-title">Hi, you've found us!</h1>
+        <p class="intro-text">
+          We believe moments should be remembered not only as they happened, but
+          as they were felt. Through our lens, we honor what matters, preserving
+          tradition in time and telling story without words. Here, memories are
+          made timeless.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-0 portfolio-grid">
+          <div class="col">
+            <div class="card-portfolio">
+              <img
+                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800"
+                alt="Work"
+              />
+              <div class="card-overlay">
+                <div class="card-category">Couple Session</div>
+                <div class="card-names">AUBRY - RENDI</div>
+                <i class="bi bi-arrow-right mt-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-portfolio">
+              <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800"
+                alt="Work"
+              />
+              <div class="card-overlay">
+                <div class="card-category">Wedding</div>
+                <div class="card-names">ANYA - ARIEF</div>
+                <i class="bi bi-arrow-right mt-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-portfolio">
+              <img
+                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800"
+                alt="Work"
+              />
+              <div class="card-overlay">
+                <div class="card-category">Wedding</div>
+                <div class="card-names">NADIA - NAIN</div>
+                <i class="bi bi-arrow-right mt-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-portfolio">
+              <img
+                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800"
+                alt="Work"
+              />
+              <div class="card-overlay">
+                <div class="card-category">Couple Session</div>
+                <div class="card-names">SHASA - GIO</div>
+                <i class="bi bi-arrow-right mt-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-portfolio">
+              <img
+                src="https://images.unsplash.com/photo-1522673607200-1648832cee98?q=80&w=800"
+                alt="Work"
+              />
+              <div class="card-overlay">
+                <div class="card-category">Engagement</div>
+                <div class="card-names">RHESMA - ALDO</div>
+                <i class="bi bi-arrow-right mt-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-portfolio">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800"
+                alt="Work"
+              />
+              <div class="card-overlay">
+                <div class="card-category">Couple Session</div>
+                <div class="card-names">BELLA - LUKAS</div>
+                <i class="bi bi-arrow-right mt-2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="cta-title">We'll see you soon</h2>
+            <div class="cta-line"></div>
+            <p class="small fw-light">
+              Thank you for investing your time in exploring our gallery. It has
+              been an incredible journey, filled with countless blessings as we
+              have had the privilege of witnessing once-in-a-lifetime moments.
+              We sincerely hope to have the opportunity to meet you in person,
+              capturing and preserving the precious chapters of your journey.
+            </p>
+            <button class="btn btn-custom">Get In Touch</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-top">
+      <i class="bi bi-instagram fs-4 mb-3"></i>
+      <div
+        class="small text-uppercase letter-spacing-2 mb-2"
+        style="letter-spacing: 2px"
+      >
+        Follow our Instagram
+      </div>
+      <div class="fw-bold">@kamisupport.id</div>
+    </section>
+
+    <footer class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-12">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="#" class="footer-link">Portfolio</a>
+          </div>
+          <div class="col-md-2 col-12">
+            <a href="#" class="footer-link">Other Works</a>
+            <a href="#" class="footer-link">Family</a>
+            <a href="#" class="footer-link">Contact Us</a>
+          </div>
+          <div class="col-md-8 text-end d-none d-md-block">
+            <a href="#" class="text-dark"><i class="bi bi-arrow-up"></i></a>
+          </div>
+        </div>
+        <div
+          class="mt-5 pt-4 border-top d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-md-0 gap-2"
+        >
+          <div class="copyright">All content Copyright © 2026 Kamisupport</div>
+          <div class="social-icons">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

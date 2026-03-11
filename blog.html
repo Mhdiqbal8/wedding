@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal - Imagenic Wedding Photography</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <style>
+      :root {
+        --primary-font: "Playfair Display", serif;
+        --secondary-font: "Montserrat", sans-serif;
+        --text-dark: #333;
+        --muted-text: #888;
+      }
+
+      body {
+        font-family: var(--secondary-font);
+        color: var(--text-dark);
+        background-color: #fff;
+      }
+
+      /* --- Navigation --- */
+      .navbar {
+        padding: 1.5rem 0;
+        background: white;
+        border-bottom: 1px solid #f8f8f8;
+      }
+      .nav-link {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-dark) !important;
+      }
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      /* --- Page Header --- */
+      .page-header {
+        padding: 80px 0 60px;
+        text-align: center;
+      }
+      .page-header h1 {
+        font-family: var(--primary-font);
+        font-size: 3rem;
+        font-style: italic;
+      }
+
+      /* --- Blog Grid --- */
+      .blog-card {
+        border: none;
+        margin-bottom: 50px;
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+      .blog-img-wrapper {
+        overflow: hidden;
+        aspect-ratio: 3/2; /* Rasio landscape standar blog */
+        margin-bottom: 20px;
+      }
+      .blog-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .blog-card:hover img {
+        transform: scale(1.03);
+      }
+      .blog-category {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--muted-text);
+        margin-bottom: 10px;
+        display: block;
+      }
+      .blog-title {
+        font-family: var(--primary-font);
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+      .blog-card:hover .blog-title {
+        color: #000;
+      }
+
+      /* --- Footer --- */
+      .footer {
+        padding: 80px 0 40px;
+        border-top: 1px solid #eee;
+        margin-top: 50px;
+      }
+      .footer-link {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .copyright {
+        font-size: 0.7rem;
+        color: #aaa;
+        margin-top: 50px;
+      }
+
+      /* Custom Gap Utility */
+      /* .custom-grid-gap {
+            column-gap: 20px;
+            row-gap: 20px;
+        } */
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <div class="row w-100 align-items-center m-0">
+          <div
+            class="col-6 col-md-5 d-none d-lg-flex justify-content-start p-0"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle px-3"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Portfolio
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="wedding.html">Wedding</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="before-wedding.html"
+                      >Before Wedding</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="couple-session.html"
+                      >Couple Session</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="analog-series.html"
+                      >Analog Series</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="col-6 col-md-2 d-flex justify-content-between justify-content-lg-center p-0"
+          >
+            <a class="navbar-brand m-0" href="#">
+              <img
+                src="https://www.imagenic.co/images/logo.png"
+                alt="Logo"
+                style="height: 35px"
+                onerror="this.src='https://placehold.co/100x40/white/black?text=IMAGENIC'"
+              />
+            </a>
+          </div>
+
+          <div
+            class="col-6 col-md-5 d-flex justify-content-end align-items-center p-0"
+          >
+            <div class="d-none d-lg-flex">
+              <ul class="navbar-nav">
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="#">Other Works</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="blog.html">Family</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="contact-us.html">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+
+            <button
+              class="navbar-toggler border-0 d-lg-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <i class="bi bi-list fs-1 text-dark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="offcanvas offcanvas-end w-100 border-0"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header justify-content-end p-4">
+        <button
+          type="button"
+          class="btn-close text-reset fs-4"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body p-0">
+        <ul class="navbar-nav custom-mobile-nav">
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link-mobile d-flex justify-content-between align-items-center"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Portfolio <i class="bi bi-chevron-down small-icon"></i>
+            </a>
+            <ul class="dropdown-menu mobile-dropdown-inner">
+              <li><a class="dropdown-item" href="wedding.html">Wedding</a></li>
+              <li>
+                <a class="dropdown-item" href="before-wedding.html"
+                  >Before Wedding</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="couple-session.html"
+                  >Couple Session</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="analog-series.html"
+                  >Analog Series</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="order-works.html">Other Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="blog.html">Family</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-end w-100 border-0"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header justify-content-end p-4">
+        <button
+          type="button"
+          class="btn-close text-reset fs-4"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body p-5">
+        <ul class="navbar-nav custom-mobile-nav">
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link-mobile d-flex justify-content-between align-items-center"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              Portfolio <i class="bi bi-chevron-down fs-5"></i>
+            </a>
+            <ul class="dropdown-menu border-0 ps-4">
+              <li><a class="dropdown-item" href="#">Wedding</a></li>
+              <li><a class="dropdown-item" href="#">Couple Session</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Other Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Family</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-mobile" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <header class="page-header">
+      <div class="container">
+        <h1>Our Journal</h1>
+        <p
+          class="text-muted small text-uppercase mt-3"
+          style="letter-spacing: 3px"
+        >
+          Stories & Moments
+        </p>
+      </div>
+    </header>
+
+    <main class="container mb-5">
+      <div class="row row-gap-md-5">
+        <div class="col-md-6">
+          <a href="blog/family-abyan.html" class="blog-card text-center">
+            <div class="blog-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200"
+                alt="Post"
+              />
+            </div>
+            <span class="blog-category">Family</span>
+            <h2 class="blog-title">Abyan Nuha is Turning One</h2>
+            <i class="bi bi-arrow-right mt-2"></i>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" class="blog-card text-center">
+            <div class="blog-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200"
+                alt="Post"
+              />
+            </div>
+            <span class="blog-category">Family</span>
+            <h2 class="blog-title">Jema is Two</h2>
+            <i class="bi bi-arrow-right mt-2"></i>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" class="blog-card text-center">
+            <div class="blog-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1200"
+                alt="Post"
+              />
+            </div>
+            <span class="blog-category">Family</span>
+            <h2 class="blog-title">Maternity Hamidah & Farhad</h2>
+            <i class="bi bi-arrow-right mt-2"></i>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" class="blog-card text-center">
+            <div class="blog-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200"
+                alt="Post"
+              />
+            </div>
+            <span class="blog-category">Family</span>
+            <h2 class="blog-title">Gender Reveal Party of Ariefin & Inka</h2>
+            <i class="bi bi-arrow-right mt-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- <nav class="mt-5 pt-4">
+            <ul class="pagination justify-content-center border-0">
+                <li class="page-item disabled"><a class="page-link border-0 text-dark bg-transparent" href="#">&laquo; Previous</a></li>
+                <li class="page-item active"><a class="page-link border-0 bg-transparent text-dark fw-bold" href="#">1</a></li>
+                <li class="page-item"><a class="page-link border-0 bg-transparent text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link border-0 bg-transparent text-dark" href="#">Next &raquo;</a></li>
+            </ul>
+        </nav> -->
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-6">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+          </div>
+          <div class="col-md-2 col-6">
+            <a href="order-works.html" class="footer-link">Other Works</a>
+            <a href="family.html" class="footer-link">Family</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </div>
+          <div class="col-md-8 text-md-end text-center mt-4 mt-md-0">
+            <div
+              class="social-icons fs-5 d-flex gap-3 justify-content-md-end justify-content-center"
+            >
+              <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="text-dark"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center copyright">
+          All content Copyright © 2026 Imagenic
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
