@@ -483,49 +483,87 @@
       // });
 
       // Production
-  form.addEventListener("submit", (e) => {
+//   form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const btn = document.getElementById("submit-btn");
+//   const formData = new FormData(form);
+
+//   // Gabungkan checkbox
+//   const pilihanKnow = formData.getAll("know").join(", ");
+//   formData.delete("know");
+//   formData.append("know", pilihanKnow);
+
+//   // Visual Effect
+//   btn.disabled = true;
+//   btn.innerHTML = "Mengirim...";
+
+//   const linkPriceList = "https://drive.google.com/drive/folders/16KrjDdUgqHmAy2gS35sQ0Asmwvhw0gC5?usp=sharing";
+
+//   // Kirim data
+//   fetch(scriptURL, { 
+//     method: "POST", 
+//     body: formData,
+//     mode: "no-cors" // Tambahkan ini agar tidak diblokir CORS di GitHub Pages
+//   })
+//   .then(() => {
+//     // Dengan no-cors, kita asumsikan berhasil terkirim
+//     console.log("Data dikirim (Mode no-cors)");
+//     window.open(linkPriceList, "_blank"); // Buka tab baru
+    
+//     // Reset Form setelah redirect dipicu
+//     setTimeout(() => {
+//       btn.disabled = false;
+//       btn.innerHTML = "Download Now";
+//       form.reset();
+//     }, 500);
+//   })
+//   .catch((error) => {
+//     console.error("Error!", error.message);
+//     // Jika error pun, kita tetap arahkan user ke link agar mereka tidak kecewa
+//     window.open(linkPriceList, "_blank");
+//     btn.disabled = false;
+//     btn.innerHTML = "Download Now";
+//   });
+// });
+
+      // production time code < 20s
+      form.addEventListener("submit", (e) => {
   e.preventDefault();
   const btn = document.getElementById("submit-btn");
   const formData = new FormData(form);
 
-  // Gabungkan checkbox
+  // 1. Gabungkan checkbox (Cepat)
   const pilihanKnow = formData.getAll("know").join(", ");
   formData.delete("know");
   formData.append("know", pilihanKnow);
 
-  // Visual Effect
+  // 2. Visual Effect Langsung
   btn.disabled = true;
-  btn.innerHTML = "Mengirim...";
+  btn.innerHTML = "Memproses...";
 
   const linkPriceList = "https://drive.google.com/drive/folders/16KrjDdUgqHmAy2gS35sQ0Asmwvhw0gC5?usp=sharing";
 
-  // Kirim data
+  // 3. TAKTIK FIRE & FORGET (Kirim tapi jangan tunggu)
+  // Kita tidak menggunakan .then() yang menunggu respon server Google
   fetch(scriptURL, { 
     method: "POST", 
     body: formData,
-    mode: "no-cors" // Tambahkan ini agar tidak diblokir CORS di GitHub Pages
-  })
-  .then(() => {
-    // Dengan no-cors, kita asumsikan berhasil terkirim
-    console.log("Data dikirim (Mode no-cors)");
-    window.open(linkPriceList, "_blank"); // Buka tab baru
-    
-    // Reset Form setelah redirect dipicu
-    setTimeout(() => {
-      btn.disabled = false;
-      btn.innerHTML = "Download Now";
-      form.reset();
-    }, 500);
-  })
-  .catch((error) => {
-    console.error("Error!", error.message);
-    // Jika error pun, kita tetap arahkan user ke link agar mereka tidak kecewa
-    window.open(linkPriceList, "_blank");
+    mode: "no-cors" 
+  }); 
+
+  // 4. Langsung buka link (Tanpa nunggu fetch selesai)
+  // Ini akan membuat user merasa prosesnya instan (< 1 detik)
+  window.open(linkPriceList, "_blank");
+
+  // 5. Reset UI setelah 2 detik agar terlihat natural
+  setTimeout(() => {
     btn.disabled = false;
     btn.innerHTML = "Download Now";
-  });
+    form.reset();
+  }, 500); 
 });
     </script>
   </body>
 </html>
+
 
