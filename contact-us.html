@@ -135,7 +135,7 @@
             <div class="d-none d-lg-flex">
               <ul class="navbar-nav">
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="#">Other Works</a>
+                  <a class="nav-link" href="order-works.html">Other Works</a>
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="blog.html">Family</a>
@@ -226,55 +226,6 @@
       </div>
     </div>
 
-    <div
-      class="offcanvas offcanvas-end w-100 border-0"
-      tabindex="-1"
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
-    >
-      <div class="offcanvas-header justify-content-end p-4">
-        <button
-          type="button"
-          class="btn-close text-reset fs-4"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body p-5">
-        <ul class="navbar-nav custom-mobile-nav">
-          <li class="nav-item">
-            <a class="nav-link-mobile" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link-mobile" href="about.html">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link-mobile d-flex justify-content-between align-items-center"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-            >
-              Portfolio <i class="bi bi-chevron-down fs-5"></i>
-            </a>
-            <ul class="dropdown-menu border-0 ps-4">
-              <li><a class="dropdown-item" href="#">Wedding</a></li>
-              <li><a class="dropdown-item" href="#">Couple Session</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link-mobile" href="#">Other Works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link-mobile" href="#">Family</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link-mobile" href="#">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
     <section class="hero">
       <div class="slider-nav">
         <div class="mb-4">01</div>
@@ -311,7 +262,7 @@
             <label class="form-label py-3">Name*</label>
             <input
               type="text"
-              name="fullName"
+              name="nama"
               class="form-control"
               placeholder="Your name"
             />
@@ -484,7 +435,7 @@
       // });
 
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzeFrwH4re4AXjH4SFzDFmeE2KdAehglLQSvR0keBLG7W0Vb1Dc4s3H-bplo0_aGiYhxg/exec";
+        "https://script.google.com/macros/s/AKfycbx15NeDrMQQfTmsfsuqCLepVs5Ujgt77A8pMuA5x7dO6u5PfDd4p9-3UzfYelxGGOa5ZA/exec";
       const form = document.getElementById("contact-form");
 
       form.addEventListener("submit", (e) => {
@@ -508,12 +459,17 @@
         btn.disabled = true;
         btn.innerHTML = "Mengirim...";
 
+        // console.log(
+        //   "Data yang dikirim:",
+        //   Object.fromEntries(formData.entries())
+        // );
         // 4. KIRIM DATA menggunakan variabel formData yang sudah diolah
         // JANGAN gunakan 'new FormData(form)' lagi agar data yang digabung terkirim!
         fetch(scriptURL, { method: "POST", body: formData })
           .then((response) => {
             console.log("Success!", response);
-            const linkPriceList = `https://drive.google.com/drive/folders/16KrjDdUgqHmAy2gS35sQ0Asmwvhw0gC5?usp=sharing`;
+            const linkPriceList =
+              "https://drive.google.com/drive/folders/16KrjDdUgqHmAy2gS35sQ0Asmwvhw0gC5?usp=sharing";
             window.open(linkPriceList, "_blank");
           })
           .catch((error) => console.error("Error!", error.message));
