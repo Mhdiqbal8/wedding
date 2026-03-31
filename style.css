@@ -3,6 +3,7 @@
   --secondary-font: "Montserrat", sans-serif;
   --accent-color: #c5b39b; /* Warna tombol Get In Touch */
   --text-dark: #333;
+  --primary-background: #fcfcf9;
 }
 
 body {
@@ -242,4 +243,48 @@ body {
 .copyright {
   font-size: 0.7rem;
   color: #999;
+}
+
+/* --- Form Section Contact US --- */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+}
+.form-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-bottom-color: #000;
+}
+textarea.form-control {
+  min-height: 120px;
+}
+.btn-submit {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  transition: 0.3s;
+}
+.btn-submit:hover {
+  background: #333;
+  color: #fff;
 }

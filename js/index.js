@@ -1,4 +1,4 @@
-AOS.init();
+// AOS.init();
 
 async function loadHTML(elementId, fileName) {
   try {
