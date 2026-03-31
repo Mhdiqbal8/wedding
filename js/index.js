@@ -13,13 +13,8 @@ async function loadHTML(elementId, fileName) {
 }
 
 // Cara memanggilnya:
-loadHTML("header-placeholder", "layouts/header.html");
-loadHTML("footer-placeholder", "layouts/footer.html");
-// loadHTML(
-//   "header-placeholder",
-//   "https://muhamadiqbal.site/wedding/layouts/header.html"
-// );
-// loadHTML(
-//   "footer-placeholder",
-//   "https://muhamadiqbal.site/wedding/layouts/footer.html"
-// );
+// loadHTML("header-placeholder", "layouts/header.html");
+// loadHTML("footer-placeholder", "layouts/footer.html");
+
+loadHTML("header-placeholder", "/wedding/layouts/header.html");
+loadHTML("footer-placeholder", "/wedding/layouts/footer.html");
