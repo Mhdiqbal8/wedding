@@ -13,8 +13,9 @@ async function loadHTML(elementId, fileName) {
 }
 
 // Cara memanggilnya:
-// loadHTML("header-placeholder", "layouts/header.html");
-// loadHTML("footer-placeholder", "layouts/footer.html");
+loadHTML("header-placeholder", "layouts/header.html");
+loadHTML("footer-placeholder", "layouts/footer.html");
 
-loadHTML("header-placeholder", "/wedding/layouts/header.html");
-loadHTML("footer-placeholder", "/wedding/layouts/footer.html");
+// production
+// loadHTML("header-placeholder", "/wedding/layouts/header.html");
+// loadHTML("footer-placeholder", "/wedding/layouts/footer.html");

@@ -71,3 +71,43 @@ const loadExternalScripts = () => {
 };
 
 loadExternalScripts();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide-image");
+  const currentNumDisplay = document.getElementById("current-num");
+  const totalNumDisplay = document.getElementById("total-num");
+  const nextBtn = document.querySelector(".btn-next");
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  // Set angka total secara otomatis
+  totalNumDisplay.innerText = totalSlides.toString().padStart(2, "0");
+
+  function updateSlider(index) {
+    // Hapus class active dari slide lama
+    slides.forEach((slide) => slide.classList.remove("active"));
+
+    // Tambah class active ke slide baru
+    slides[index].classList.add("active");
+
+    // Update angka (index + 1 agar tidak mulai dari 0)
+    currentNumDisplay.innerText = (index + 1).toString().padStart(2, "0");
+  }
+
+  nextBtn.addEventListener("click", function () {
+    currentIndex++;
+
+    // Jika sampai di slide terakhir, balik ke awal
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
+    }
+
+    updateSlider(currentIndex);
+  });
+
+  // Opsional: Auto Play setiap 5 detik
+  setInterval(() => {
+    nextBtn.click();
+  }, 5000);
+});
