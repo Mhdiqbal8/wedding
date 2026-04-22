@@ -12,7 +12,7 @@ function createGaleri(folderName, total, targetId) {
     colDiv.className = "col";
 
     colDiv.innerHTML = `
-            <div class="card-portfolio">
+            <div class="card-portfolio" data-aos="zoom-in">
                 <img 
                     src="${fullPath}" 
                     alt="Gallery Image ${i}"
