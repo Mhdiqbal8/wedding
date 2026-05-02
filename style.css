@@ -13,36 +13,24 @@ body {
 }
 
 /* --- Navigation --- */
-/* .navbar {
-  padding: 1.5rem 0;
-  background-color: transparent;
-  background-color: #b3b3b3;
-  position: absolute;
-  width: 90%;
-  margin-top: 10px;
-  border-radius: 10px;
-  left: 10%;
-  right: 10%;
-  z-index: 1000;
-} */
+
 .navbar {
   padding: 1.5rem 0;
-  /* background-color: transparent; */
+  /* background-color: transparent; Awalnya transparan */
   background-color: #2016168b;
-  position: absolute;
+  transition: all 0.4s ease-in-out; /* Agar transisi warna halus */
   width: 100%;
-  /* margin-top: 10px;
-  border-radius: 10px; */
   z-index: 1000;
 }
 
-.navbar-toggler:focus {
-  /* outline: 0px !important; */
-  box-shadow: none !important;
+/* Class ini akan aktif saat di-scroll */
+.navbar-scrolled {
+  background-color: #000000f4 !important; /* Full Black */
+  /* background-color: #000000 !important; Full Black */
+  padding: 0.8rem 0; /* Navbar sedikit mengecil saat scroll (opsional) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
-/* .navbar-brand img {
-    height: 40px;
-} */
+
 .nav-link {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -50,6 +38,31 @@ body {
   color: #fff !important;
   font-weight: 400;
 }
+
+/* CSS untuk tombol toggler agar tetap terlihat */
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* .navbar {
+  padding: 1.5rem 0;
+  background-color: #2016168b;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff !important;
+  font-weight: 400;
+} */
 
 /* Styling Menu Utama Mobile */
 .custom-mobile-nav {
