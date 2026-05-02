@@ -112,11 +112,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 5000);
 });
 
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("navbar-scrolled");
-  } else {
-    navbar.classList.remove("navbar-scrolled");
-  }
+// window.addEventListener("scroll", function () {
+//   const navbar = document.querySelector(".navbar");
+//   if (window.scrollY > 50) {
+//     navbar.classList.add("navbar-scrolled");
+//   } else {
+//     navbar.classList.remove("navbar-scrolled");
+//   }
+// });
+
+// 2
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+      // Pastikan element navbar ditemukan
+      if (window.scrollY > 50) {
+        navbar.classList.add("navbar-scrolled");
+      } else {
+        navbar.classList.remove("navbar-scrolled");
+      }
+    }
+  });
 });
